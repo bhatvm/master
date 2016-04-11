@@ -1,0 +1,115 @@
+Call:
+rpart(formula = churn_flag ~ ., data = train[, 2:120], method = "class")
+  n= 7000 
+
+          CP nsplit rel error    xerror       xstd
+1 0.02025203      0 1.0000000 1.0000000 0.01752678
+2 0.01000000      4 0.8991899 0.9536454 0.01729923
+
+Variable importance
+ visits_last_6months  f_visits_last6mnths visits_last_12months f_visits_last12mnths 
+                  18                   18                   14                   14 
+ p_visits_last6mnths            visits_q1         visit_months              recency 
+                  11                   11                    3                    2 
+                freq               visits p_visits_last12mnths             sales_q1 
+                   1                    1                    1                    1 
+       avg_basket_q1            basket_q1           f_sales_q1             colli_q1 
+                   1                    1                    1                    1 
+              cat_q1 
+                   1 
+
+Node number 1: 7000 observations,    complexity param=0.02025203
+  predicted class=0  expected loss=0.3174286  P(node) =1
+    class counts:  4778  2222
+   probabilities: 0.683 0.317 
+  left son=2 (2566 obs) right son=3 (4434 obs)
+  Primary splits:
+      visits_last_6months  < 5.5       to the right, improve=302.1350, (0 missing)
+      f_visits_last6mnths  < 4.5       to the right, improve=301.8156, (0 missing)
+      f_visits_last12mnths < 8.5       to the right, improve=286.8810, (0 missing)
+      visit_months         < 7.5       to the right, improve=282.4651, (0 missing)
+      visits_last_12months < 8.5       to the right, improve=280.4794, (0 missing)
+  Surrogate splits:
+      f_visits_last6mnths  < 5.5       to the right, agree=0.990, adj=0.973, (0 split)
+      f_visits_last12mnths < 11.5      to the right, agree=0.872, adj=0.650, (0 split)
+      visits_last_12months < 11.5      to the right, agree=0.872, adj=0.650, (0 split)
+      p_visits_last6mnths  < 3.5       to the right, agree=0.857, adj=0.611, (0 split)
+      visits_q1            < 3.5       to the right, agree=0.854, adj=0.601, (0 split)
+
+Node number 2: 2566 observations
+  predicted class=0  expected loss=0.124318  P(node) =0.3665714
+    class counts:  2247   319
+   probabilities: 0.876 0.124 
+
+Node number 3: 4434 observations,    complexity param=0.02025203
+  predicted class=0  expected loss=0.4291836  P(node) =0.6334286
+    class counts:  2531  1903
+   probabilities: 0.571 0.429 
+  left son=6 (2566 obs) right son=7 (1868 obs)
+  Primary splits:
+      visit_months        < 4.5       to the right, improve=58.14823, (0 missing)
+      recency             < 81.5      to the left,  improve=57.58135, (0 missing)
+      sales_q1            < 3837.64   to the right, improve=55.70637, (0 missing)
+      f_sales_q1          < 50.445    to the right, improve=53.99488, (0 missing)
+      colli_per_chg_q1_q2 < 0.00345   to the right, improve=53.97868, (0 missing)
+  Surrogate splits:
+      visits_last_12months < 5.5       to the right, agree=0.853, adj=0.651, (0 split)
+      f_visits_last12mnths < 5.5       to the right, agree=0.845, adj=0.631, (0 split)
+      freq                 < 57.5      to the left,  agree=0.734, adj=0.369, (0 split)
+      visits               < 10.5      to the right, agree=0.727, adj=0.352, (0 split)
+      p_visits_last12mnths < 4.5       to the right, agree=0.725, adj=0.347, (0 split)
+
+Node number 6: 2566 observations,    complexity param=0.02025203
+  predicted class=0  expected loss=0.3600935  P(node) =0.3665714
+    class counts:  1642   924
+   probabilities: 0.640 0.360 
+  left son=12 (2340 obs) right son=13 (226 obs)
+  Primary splits:
+      recency       < 129.5     to the left,  improve=31.10890, (0 missing)
+      sales_q1      < 3837.64   to the right, improve=29.11033, (0 missing)
+      colli_q1      < 17.044    to the right, improve=27.21988, (0 missing)
+      basket_q1     < 38.395    to the right, improve=26.28440, (0 missing)
+      avg_basket_q1 < 38.395    to the right, improve=26.28440, (0 missing)
+  Surrogate splits:
+      freq_last_12months   < 11.01368  to the right, agree=0.915, adj=0.035, (0 split)
+      food_promo_per       < 0.66      to the left,  agree=0.912, adj=0.004, (0 split)
+      visits_last_12months < 43.5      to the left,  agree=0.912, adj=0.004, (0 split)
+      visits_per_chg_6_6   < 0.1026316 to the right, agree=0.912, adj=0.004, (0 split)
+
+Node number 7: 1868 observations,    complexity param=0.02025203
+  predicted class=1  expected loss=0.4759101  P(node) =0.2668571
+    class counts:   889   979
+   probabilities: 0.476 0.524 
+  left son=14 (858 obs) right son=15 (1010 obs)
+  Primary splits:
+      sales_q1        < 5091.435  to the right, improve=16.93191, (0 missing)
+      avg_articles_q1 < 2.291667  to the right, improve=16.68661, (0 missing)
+      cat_q1          < 6.5       to the right, improve=16.37208, (0 missing)
+      recency         < 77.5      to the left,  improve=16.18633, (0 missing)
+      colli_q1        < 84.3295   to the right, improve=16.08537, (0 missing)
+  Surrogate splits:
+      basket_q1     < 2548.055  to the right, agree=0.932, adj=0.852, (0 split)
+      avg_basket_q1 < 2548.055  to the right, agree=0.932, adj=0.852, (0 split)
+      f_sales_q1    < 4629.055  to the right, agree=0.932, adj=0.852, (0 split)
+      colli_q1      < 13.64     to the right, agree=0.902, adj=0.787, (0 split)
+      cat_q1        < 6.5       to the right, agree=0.888, adj=0.756, (0 split)
+
+Node number 12: 2340 observations
+  predicted class=0  expected loss=0.3358974  P(node) =0.3342857
+    class counts:  1554   786
+   probabilities: 0.664 0.336 
+
+Node number 13: 226 observations
+  predicted class=1  expected loss=0.3893805  P(node) =0.03228571
+    class counts:    88   138
+   probabilities: 0.389 0.611 
+
+Node number 14: 858 observations
+  predicted class=0  expected loss=0.451049  P(node) =0.1225714
+    class counts:   471   387
+   probabilities: 0.549 0.451 
+
+Node number 15: 1010 observations
+  predicted class=1  expected loss=0.4138614  P(node) =0.1442857
+    class counts:   418   592
+   probabilities: 0.414 0.586 
